@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cameroon Weather App</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/static/weather/style.css">
+</head>
+
+
+    <div class="container py-5 d-flex justify-content-center">
+        <div class="card shadow-lg p-4 rounded-4 weather-card">
+
+            <h2 class="mb-4 text-center fw-bold">🌤️ What's the weather like?</h2>
+
+            <!-- Search Form -->
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-lg" name="city_name" placeholder="Enter a city in Cameroon" required>
+                    <button class="btn btn-primary btn-lg">Check</button>
+                </div>
+            </form>
+
+            <!-- Error -->
+            {% if error %}
+                <div class="alert alert-danger text-center">{{ error }}</div>
+            {% endif %}
+
+            <!-- Weather Data -->
+             
+            {% if weather %}
+            <div class="text-center mt-4">
+
+                <h3 class="fw-bold">{{ weather.city }}</h3>
+
+                <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather icon">
+
+                <h1 class="display-3 fw-semibold">{{ weather.temp }}°C</h1>
+
+                <p class="lead text-capitalize">{{ weather.description }}</p>
+
+                <hr>
+
+                <p>💧 Humidity: <strong>{{ weather.humidity }}%</strong></p>
+                <p>🌬️ Wind Speed: <strong>{{ weather.wind }} m/s</strong></p>
+
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+</body>
+</html>

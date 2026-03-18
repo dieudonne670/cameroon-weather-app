@@ -1,0 +1,10 @@
+.weather-card {
+    max-width: 500px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 25px;
+}
+
+body {
+    background: linear-gradient(135deg, #e8edf3, #cfd9e6);
+}
