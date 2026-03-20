@@ -4,8 +4,9 @@ A modern, clean Django-based web application that shows real-time weather data f
 ---
 
 ## 🚀 Live Demo  
-🟢 **COMING SOON** (hosted on Render)  
-Once deployed, your live link will appear here.
+🟢 ****LIVE DEMO LINK****** (hosted on Render)  
+the cameroon-weather-app.
+https://cameroon-weather-app.onrender.com/
 
 ---
 
