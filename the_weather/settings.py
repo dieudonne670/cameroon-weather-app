@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-q$1mrj=yjw5z1%27y5v5$py#ys=8u_c0!^15u7^ws_c15#8u+4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "cameroon-weather-app.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
